@@ -58,9 +58,39 @@ In this lesson, we will introduce the basic concepts of AI, its capabilities and
   - Time
 - Everything else will be covered as we progress through this bootcamp
 
-## AI Bootcamp
+## Introduction to Generative AI
 
-- Example of AI application: [ChatGPT](https://chat.openai.com/)
+- Programming a system or application to solve a specific task can take a lot of time and effort, depending on the complexity of the task and the number of edge cases that need to be considered
+  - Imagine programming a system to translate text from one language to another by looking up words in a dictionary and applying grammar rules, comparing contexts, and considering idiomatic expressions for every single word in every single variation of their usage
+    - Such applications are simply not feasible to be programmed by hand, not even by a huge team of programmers
+- For these situations, **AI Models** can be **trained** for statistically solving the task without necessarily handling the actual _"reasoning"_ or _"understanding"_ of the task
+  - The **training** process is done by **feeding** the model with **examples** of the task and the **correct** answers
+  - The **model** then _"learns"_ the **patterns** and **rules** that **statistically** solve the task
+  - The **model** can then **predict** the **correct** answer for new **examples** that it has never seen before
+
+### Examples of AI Tasks
+
+- Natural Language Processing (NLP)
+  - Question answering
+  - Feature extraction
+  - Text classification (e.g., Sentiment Analysis)
+  - Text generation (e.g., Text Summarization and Text Completions)
+  - Fill-Mask
+  - Translation
+  - Zero-shot classification
+- Computer Vision (CV)
+- Image Generation
+- Audio processing
+- Multi-modal tasks
+
+## Generative AI
+
+- Generative AI is a type of AI that can generate new content based on a given input
+  - The generated content can be in form of text, images, audio, or any other type of data
+  - The input (in most cases) is a text prompt, which is a short text that the user writes to ask the AI to do something
+    - Ideally the AI should be able to handle prompts in natural language (i.e. in a way that is similar to how humans communicate), without requiring domain-specific knowledge from the user
+    - Together with the prompt, the user can also provide images or other types of data to guide the AI in generating the content
+- Example of Generative AI application: [ChatGPT](https://chat.openai.com/)
 
 > Did someone program the application to understand and generate text for each single word in each single language?
 >
@@ -77,68 +107,7 @@ In this lesson, we will introduce the basic concepts of AI, its capabilities and
 - Does it mean that the computer is _"thinking"_?
 - Does it mean that the computer is _"conscious"_?
 
-## AI Tasks
-
-- Programming a system or application to solve a specific task can take a lot of time and effort, depending on the complexity of the task and the number of edge cases that need to be considered
-  - Imagine programming a system to translate text from one language to another by looking up words in a dictionary and applying grammar rules, comparing contexts, and considering idiomatic expressions for every single word in every single variation of their usage
-    - Such applications are simply not feasible to be programmed by hand, not even by a huge team of programmers
-- For these situations, **AI Models** can be **trained** for statistically solving the task without necessarily handling the actual _"reasoning"_ or _"understanding"_ of the task
-  - The **training** process is done by **feeding** the model with **examples** of the task and the **correct** answers
-  - The **model** then _"learns"_ the **patterns** and **rules** that **statistically** solve the task
-  - The **model** can then **predict** the **correct** answer for new **examples** that it has never seen before
-
-### Examples of AI Tasks
-
-- **Natural Language Processing (NLP)**
-  - Question answering
-  - Feature extraction
-  - Text classification (e.g., Sentiment Analysis)
-  - Text generation (e.g., Text Summarization and Text Completions)
-  - Fill-Mask
-  - Translation
-  - Zero-shot classification
-- **Computer Vision (CV)**
-  - Image/video classification
-  - Object detection
-  - Image/video segmentation
-  - Image/video generation
-  - Image/video captioning
-  - Depth estimation
-  - Image/video feature extraction
-  - Mask generation
-  - Zero-shot classification
-  - Zero-shot detection
-- **Image Generation**
-  - Text-to-image
-  - Image-to-image
-  - Image-to-3D
-  - Text-to-3D
-  - Text-to-video
-  - Image-to-video
-  - Video-to-video
-  - Video-to-3D-video
-  - Text-to-3D-video
-- **Audio processing**
-  - Speech recognition
-  - Speech generation
-  - Audio classification
-  - Audio generation
-  - Audio-to-text generation
-  - Text-to-audio generation
-  - Audio-to-image generation
-  - Audio-to-video generation
-- **Multi-modal tasks**
-  - Text-image-to-text generation
-  - Text-image-audio-to-text generation
-  - Text-image-audio-video-to-text generation
-  - Text-to-text-image generation
-  - Text-to-text-audio generation
-  - Text-to-text-image-audio generation
-  - Text-to-text-image-audio-video generation
-  - Document question answering
-  - Visual question answering
-
-## Capabilities and Limitations of AI
+## Capabilities and Limitations of Generative AI
 
 - [Stochastic parrot](https://en.wikipedia.org/wiki/Stochastic_parrots)
   - A critique view of current LLMs (large language models)

@@ -12,6 +12,39 @@ We'll also learn to leverage the Vercel NextJS AI SDK to accelerate development,
 
 Finally, we'll clone and run a sample project from Vercel, using it as a foundation to construct our own AI application.
 
+## Prerequisites
+
+- Proficiency in using a shell/terminal/console/bash on your device
+  - Familiarity with basic commands like `cd`, `ls`, and `mkdir`
+  - Ability to execute packages, scripts, and commands on your device
+- Installation of Python tools on your device
+  - [Python](https://www.python.org/downloads/)
+  - [Pip](https://pip.pypa.io/en/stable/installation/)
+- Proficiency in using `python` and `pip` commands
+  - Documentation: [Python](https://docs.python.org/3/)
+  - Documentation: [Pip](https://pip.pypa.io/en/stable/)
+- Proficiency in using `venv` to create and manage virtual environments
+  - Documentation: [Python venv](https://docs.python.org/3/library/venv.html)
+- Node.js installed on your device
+  - [Node.js](https://nodejs.org/en/download/)
+- Proficiency with `npm` and `npx` commands
+  - Documentation: [npm](https://docs.npmjs.com/)
+  - Documentation: [npx](https://www.npmjs.com/package/npx)
+- Understanding of `npm install` and managing the `node_modules` folder
+  - Documentation: [npm install](https://docs.npmjs.com/cli/v10/commands/npm-install)
+- Git CLI installed on your device
+  - [Git](https://git-scm.com/downloads)
+- Proficiency with `git` commands for cloning repositories
+  - Documentation: [Git](https://git-scm.com/doc)
+- Basic knowledge of JavaScript programming language syntax
+  - [JavaScript official tutorial](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+  - [Learn X in Y minutes](https://learnxinyminutes.com/docs/javascript/)
+- Basic knowledge of TypeScript programming language syntax
+  - [TypeScript official tutorial](https://www.typescriptlang.org/docs/)
+  - [Learn X in Y minutes](https://learnxinyminutes.com/docs/typescript/)
+- An account at [OpenAI Platform](https://platform.openai.com/)
+  - To run API Commands on the platform, set up [billing](https://platform.openai.com/account/billing/overview) and add at least **5 USD** credits to your account
+
 ## What is a Web Application?
 
 - Definition and characteristics of Web Applications

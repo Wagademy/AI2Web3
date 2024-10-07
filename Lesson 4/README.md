@@ -13,6 +13,14 @@ We'll explore how these AI Agents differ from simple programmed scripts and how 
 - Proficiency in using a shell/terminal/console/bash on your device
   - Familiarity with basic commands like `cd`, `ls`, and `mkdir`
   - Ability to execute packages, scripts, and commands on your device
+- Installation of Python tools on your device
+  - [Python](https://www.python.org/downloads/)
+  - [Pip](https://pip.pypa.io/en/stable/installation/)
+- Proficiency in using `python` and `pip` commands
+  - Documentation: [Python](https://docs.python.org/3/)
+  - Documentation: [Pip](https://pip.pypa.io/en/stable/)
+- Proficiency in using `venv` to create and manage virtual environments
+  - Documentation: [Python venv](https://docs.python.org/3/library/venv.html)
 - Node.js installed on your device
   - [Node.js](https://nodejs.org/en/download/)
 - Proficiency with `npm` and `npx` commands
@@ -98,7 +106,7 @@ We'll explore how these AI Agents differ from simple programmed scripts and how 
     - Lower-tier agents can be simpler implementations, such as reactive or reflective agents
   - Higher-level agents consolidate outcomes and coordinate the efforts of their subordinates to ensure overall goal achievement
 
-## Building Agents on top of OpenAI Features  
+## Building Agents on top of OpenAI Features
 
 - OpenAI Assistants features
   - [Code Interpreter](https://platform.openai.com/docs/assistants/tools/code-interpreter)
@@ -180,6 +188,96 @@ We'll explore how these AI Agents differ from simple programmed scripts and how 
 - Implementing Query Transformations
   - Decision-making for information retrieval
 - Multi-step queries
+
+## Building Agents with Fetch
+
+- [Fetch.ai](https://fetch.ai/) is a marketplace of dynamic applications
+  - Using Fetch, developers can build and connect services and APIs without any domain knowledge
+  - Fetch infrastructure enables ‘search and discovery’ and ‘dynamic connectivity’
+- Fetch technology is built on four key components:
+  - Agents
+    - AI Agents are independent decision-makers that connect to the network and other agents
+    - Agents can represent data, APIs, services, ML models and people
+  - Agentverse
+    - serves as a development and hosting platform for these agents
+  - AI Engine
+    - Enables humans to interact with the dynamic agent marketplace using natural language to execute the objective
+  - Fetch Network
+    - Underpins the entire system, ensuring smooth operation and integration
+- Introduction to [Fetch.ai Architecture](https://fetch.ai/docs/concepts/introducing-fetchai)
+- Using the [Agentverse](https://agentverse.ai/) to build and host agents
+- Using the [DeltaV](https://deltav.agentverse.ai/) to request agent services with prompts
+
+### Setting up a Fetch.ai Agent
+
+1. Create a folder for your project
+
+   ```bash
+   mkdir fetch-agent
+   cd fetch-agent
+   ```
+
+2. Create a new Python virtual environment
+
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+3. Install the [uagents](https://pypi.org/project/uagents/) library
+
+   ```bash
+   pip install uagents
+   ```
+
+4. Create a new Python file for your agent
+
+   ```bash
+   touch agent.py
+   ```
+
+5. Check if installation was successful
+
+   ```bash
+   pip show uagents
+   ```
+
+6. Create a new Python file for your agent
+
+   ```bash
+   touch agent.py
+   ```
+
+7. Import the Agent and Context classes from the uagents library, and then create an agent using the class Agent
+
+   ```python
+   from uagents import Agent, Context
+   agent = Agent(name="alice", seed="secret_seed_phrase")
+   ```
+
+8. Define the agent's behavior
+
+   ```python
+   @agent.on_event("startup")
+   async def introduce_agent(ctx: Context):
+       ctx.logger.info(f"Hello, I'm agent {agent.name} and my address is {agent.address}.")
+
+   if __name__ == "__main__":
+       agent.run()
+   ```
+
+9. Run the agent
+
+   ```bash
+   python agent.py
+   ```
+
+10. Check the output in the console
+
+    ```bash
+    INFO:     [alice]: Starting server on http://0.0.0.0:8000 (Press CTRL+C to quit)
+    INFO:     [alice]: Hello, I'm agent alice and my address is <agent_address>
+    ```
 
 ## Monetizing AI Agents with Tokens
 

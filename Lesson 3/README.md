@@ -17,6 +17,14 @@ Additionally, we'll set up the Stable Diffusion WebUI application to easily load
 - Proficiency in using a shell/terminal/console/bash on your device
   - Familiarity with basic commands like `cd`, `ls`, and `mkdir`
   - Ability to execute packages, scripts, and commands on your device
+- Installation of Python tools on your device
+  - [Python](https://www.python.org/downloads/)
+  - [Pip](https://pip.pypa.io/en/stable/installation/)
+- Proficiency in using `python` and `pip` commands
+  - Documentation: [Python](https://docs.python.org/3/)
+  - Documentation: [Pip](https://pip.pypa.io/en/stable/)
+- Proficiency in using `venv` to create and manage virtual environments
+  - Documentation: [Python venv](https://docs.python.org/3/library/venv.html)
 - Node.js installed on your device
   - [Node.js](https://nodejs.org/en/download/)
 - Proficiency with `npm` and `npx` commands
