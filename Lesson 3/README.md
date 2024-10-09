@@ -210,24 +210,100 @@ Additionally, we'll set up the Stable Diffusion WebUI application to easily load
         onChange={handleInputChange}
       />
     </form>
+    ```  
+
+11. Your code should look like this:
+
+    ```tsx
+    "use client";
+
+    import { useChat } from "ai/react";
+    import { useState, useRef } from "react";
+    
+    export default function Chat() {
+      const { messages, input, handleInputChange, handleSubmit } = useChat();
+    
+      const [files, setFiles] = useState<FileList | undefined>(undefined);
+      const fileInputRef = useRef<HTMLInputElement>(null);
+      return (
+        <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
+          {messages.map((m) => (
+            <>
+              <div key={m.id} className="whitespace-pre-wrap">
+                {m.role === "user" ? "User: " : "AI: "}
+                {m.content}
+              </div>
+              <div>
+                {m?.experimental_attachments
+                  ?.filter((attachment) =>
+                    attachment?.contentType?.startsWith("image/")
+                  )
+                  .map((attachment, index) => (
+                    <img
+                      key={`${m.id}-${index}`}
+                      src={attachment.url}
+                      width={500}
+                      alt={attachment.name}
+                    />
+                  ))}
+              </div>
+            </>
+          ))}
+    
+          <form
+            className="fixed bottom-0 w-full max-w-md p-2 mb-8 border border-gray-300 rounded shadow-xl space-y-2"
+            onSubmit={(event) => {
+              handleSubmit(event, {
+                experimental_attachments: files,
+              });
+    
+              setFiles(undefined);
+    
+              if (fileInputRef.current) {
+                fileInputRef.current.value = "";
+              }
+            }}
+          >
+            <input
+              type="file"
+              className=""
+              onChange={(event) => {
+                if (event.target.files) {
+                  setFiles(event.target.files);
+                }
+              }}
+              multiple
+              ref={fileInputRef}
+            />
+            <input
+              className="w-full p-2 text-black"
+              value={input}
+              placeholder="Say something..."
+              onChange={handleInputChange}
+            />
+          </form>
+        </div>
+      );
+    }
+
     ```
 
-11. Run the project
+12. Run the project
 
     ```bash
     npm run dev
     ```
 
-12. Open the browser and navigate to <http://localhost:3000>
+13. Open the browser and navigate to <http://localhost:3000>
 
-13. Use an image as a prompt to generate a text response
+14. Use an image as a prompt to generate a text response
 
     - Upload an image to the chat
     - Ask a prompt related to the image
 
-14. Hit **Enter** to send the message
+15. Hit **Enter** to send the message
 
-15. Experiment with the chat application
+16. Experiment with the chat application
 
 ## Computer Vision Models
 
