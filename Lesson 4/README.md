@@ -230,32 +230,26 @@ We'll explore how these AI Agents differ from simple programmed scripts and how 
    pip install uagents
    ```
 
-4. Create a new Python file for your agent
-
-   ```bash
-   touch agent.py
-   ```
-
-5. Check if installation was successful
+4. Check if installation was successful
 
    ```bash
    pip show uagents
    ```
 
-6. Create a new Python file for your agent
+5. Create a new Python file for your agent
 
    ```bash
    touch agent.py
    ```
 
-7. Import the Agent and Context classes from the uagents library, and then create an agent using the class Agent
+6. Import the Agent and Context classes from the uagents library, and then create an agent using the class Agent
 
    ```python
    from uagents import Agent, Context
    agent = Agent(name="alice", seed="secret_seed_phrase")
    ```
 
-8. Define the agent's behavior
+7. Define the agent's behavior
 
    ```python
    @agent.on_event("startup")
@@ -266,13 +260,13 @@ We'll explore how these AI Agents differ from simple programmed scripts and how 
        agent.run()
    ```
 
-9. Run the agent
+8. Run the agent
 
    ```bash
    python agent.py
    ```
 
-10. Check the output in the console
+9. Check the output in the console
 
     ```bash
     INFO:     [alice]: Starting server on http://0.0.0.0:8000 (Press CTRL+C to quit)
