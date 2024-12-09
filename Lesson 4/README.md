@@ -236,38 +236,26 @@ A troll is sitting in front of the contract guarding the vault.
 - Token holders share revenue of the IMO AI model
 - The [IMO launch blog post](https://mirror.xyz/orablog.eth/xYMD27tN23ppbKCluB9faytF_W6M1hKXTuKcfkm3D50) and the [first IMO implementation](https://mirror.xyz/orablog.eth/GSjMm-qC4WWsduGqCISSvA1IxicJbyRDES_bl7-Tt2o)
 
-## Creating a Token-Enabled AI Agent
+## Introduction to Decentralized AI Agents
 
-Let's create a simple AI Agent that can interact with a smart contract to perform token transfers. We'll use the [Coinbase AgentKit](https://www.coinbase.com/en-br/developer-platform/discover/launches/introducing-agentkit) for creating the agent and implementing the blockchain interaction.
+- AI Agents
+- Using LLMs as "reasoning engines" for decision making workflows
+- Automating tasks beyond textual output
+- Using AI Agents to interact with the world
+- Decentralizing AI Agents execution with Web3 tools
 
-1. Create an account and get an API key at [Coinbase Developer Platform](https://portal.cdp.coinbase.com/projects/api-keys)
-2. Create an API ket in the [OpenAI Platform](https://platform.openai.com/api-keys) and fund your account with at least $5 or so for testing
-3. Fork the template from [AgentKit Replit Template](https://replit.com/@CoinbaseDev/CDP-AgentKit#README.md)
-   - Once forked, you'll have your own version of the project to modify
-4. Configure Your Environment
+### Implementing a Decentralized AI Agent with Swarm Intelligence
 
-   - Click on `Tools` in the left sidebar
-   - Click on `Secrets` in under the `Workspace Features` section
-   - Add the following secrets:
+[Swarm intelligence](https://github.com/jbarnes850/near_swarm_intelligence) is a collaborative decision-making approach where multiple specialized agents work together to achieve better outcomes than any single agent could alone. In this framework:
 
-   ```text
-   CDP_API_KEY_NAME=your_cdp_key_name
-   CDP_API_KEY_PRIVATE_KEY=your_cdp_private_key
-   OPENAI_API_KEY=your_openai_key
-   NETWORK_ID="base-sepolia" # Optional, defaults to base-sepolia
-   ```
+- Market Analyzer agents evaluate price data and trading volumes
+- Risk Manager agents assess potential risks and exposure
+- Strategy Optimizer agents fine-tune execution parameters
 
-5. Run the Agent
-   - Click on `Run` in the top panel
+## Final Exercise
 
-## Group Exercise
-
-- Form a group of 2-5 people around you
-- Create a Github repository for your group
-- Start with the Agent code from the previous exercise
-  - Deploy a smart contract for your token to be used with the agent
-  - Implement the function for the agent to read your balance of tokens
-  - Ask the agent about your balance of tokens in your wallet
-    - Bonus: Make the agent answer differently according to the balance of tokens in your wallet
-- Commit the changes to the repository
-- Deploy the application to Vercel
+- Append your project submitted in the [Projects Discussion Category](https://github.com/Wagademy/AI2Web3/discussions/categories/projects) with the developments of your project within the days of the bootcamp
+- Prepare a short video presentation of your project with a duration of no more than 3 minutes
+  - Explain as much as possible of your project with visual demonstrations of things that you have built, and avoid long explanations (show, don't tell)
+- Update your project post with the video link and the project description
+  - Include any relevant links and technical details of your project for evaluation

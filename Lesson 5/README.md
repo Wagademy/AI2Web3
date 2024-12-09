@@ -217,6 +217,30 @@ AI Agents can be designed to handle monetary transactions using digital tokens, 
 - Building smart contracts
 - Deploying decentralized AI Agents
 
+## Creating a Token-Enabled AI Agent
+
+Let's create a simple AI Agent that can interact with a smart contract to perform token transfers. We'll use the [Coinbase AgentKit](https://www.coinbase.com/en-br/developer-platform/discover/launches/introducing-agentkit) for creating the agent and implementing the blockchain interaction.
+
+1. Create an account and get an API key at [Coinbase Developer Platform](https://portal.cdp.coinbase.com/projects/api-keys)
+2. Create an API ket in the [OpenAI Platform](https://platform.openai.com/api-keys) and fund your account with at least $5 or so for testing
+3. Fork the template from [AgentKit Replit Template](https://replit.com/@CoinbaseDev/CDP-AgentKit#README.md)
+   - Once forked, you'll have your own version of the project to modify
+4. Configure Your Environment
+
+   - Click on `Tools` in the left sidebar
+   - Click on `Secrets` in under the `Workspace Features` section
+   - Add the following secrets:
+
+   ```text
+   CDP_API_KEY_NAME=your_cdp_key_name
+   CDP_API_KEY_PRIVATE_KEY=your_cdp_private_key
+   OPENAI_API_KEY=your_openai_key
+   NETWORK_ID="base-sepolia" # Optional, defaults to base-sepolia
+   ```
+
+5. Run the Agent
+   - Click on `Run` in the top panel
+
 ## Deploying Applications to a Decentralized Infrastructure
 
 - Hosting applications
