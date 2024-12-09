@@ -754,7 +754,7 @@ Additionally, we'll set up the Stable Diffusion WebUI application to easily load
 
 - **Selecting a Model (checkpoint)**
 
-  - The starting model is the "classic" `runwayml/stable-diffusion-v1-5` [Model](https://huggingface.co/runwayml/stable-diffusion-v1-5)
+  - The starting model is the "classic" `legacy/stable-diffusion-v1-5` [Model](https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5)
   - Specifically, the version used is `v1-5-pruned-emaonly`, ideal for inference (generating images) due to lower VRAM usage
     - The "full" `v1-5-pruned` version is suitable for fine-tuning but uses more VRAM
       - `EMAonly` refers to the use of only the Exponential Moving Average (EMA) of the weights, a technique used to stabilize model training
