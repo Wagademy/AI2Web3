@@ -124,33 +124,6 @@ In this lesson, we will introduce the basic concepts of AI, its capabilities and
     - [Dilthey, W. (1900). The Rise of Hermeneutics.](https://www.degruyter.com/document/doi/10.1515/9780691188706-006/html?lang=en): Interpretive process of making meaning
     - [Ryle, G. (1949). The Concept of Mind.](https://archive.org/details/conceptofmind0000ryle): Ability to apply knowledge in various contexts
     - [Chalmers, D. (1996). The Conscious Mind.](https://personal.lse.ac.uk/ROBERT49/teaching/ph103/pdf/Chalmers_The_Conscious_Mind.pdf): Functional role in cognitive system
-  - As of our current knowledge, to "understand" means:
-    - To grasp the meaning or significance of information
-      - Example: Recognizing that "It's raining cats and dogs" is an idiom, not a literal statement
-      - Example: Interpreting a graph showing climate change trends over time
-    - To process and interpret data in a meaningful way
-      - Example: Analyzing sales figures to identify seasonal patterns
-      - Example: Interpreting medical test results to diagnose a condition
-    - To apply knowledge in various contexts appropriately
-      - Example: Using algebra skills to calculate a tip at a restaurant
-    - To make logical inferences and connections
-      - Example: Deducing that a suspect is left-handed based on crime scene evidence
-      - Example: Connecting historical events to understand their impact on current geopolitics
-      - Example: Understanding the role of technology advancements in shaping the social and political changes in the past centuries
-    - To recognize patterns and relationships
-      - Example: Identifying the Fibonacci sequence in nature
-      - Example: Noticing correlations between diet and health outcomes in a study
-    - To adapt knowledge to new situations
-      - Example: Using cooking skills to improvise a meal with limited ingredients
-    - To communicate ideas effectively
-      - Example: Explaining a complex scientific concept to a child
-    - To solve problems using acquired knowledge
-      - Example: Troubleshooting a malfunctioning computer using technical expertise
-      - Example: Resolving a conflict between coworkers using conflict resolution strategies
-    - To demonstrate awareness of one's own thought processes
-      - Example: Recognizing and correcting one's own biases in decision-making
-    - To exhibit creativity in applying understanding
-      - Example: Combining ingredients in novel ways to create a new recipe
 - The current capabilities of AI models
   - Limited to "statistical" reasoning
   - Infer answers based on patterns and correlations in data
@@ -450,64 +423,10 @@ These tools offer various features such as model management, optimized inference
 
 Tools like [GPT4All](https://github.com/nomic-ai/gpt4all) simplify the process of loading models and running inference tasks, even for non-developers. These tools abstract away many configurations, leaving room for basic settings such as CPU thread usage, device selection, and simple sampling options.
 
-For this bootcamp, we should foster the use of open-source developer tools to explore and utilize GPT models on our own devices. While there are more polished and feature-rich tools for end-users, we'll focus on [Oobabooga's Text Generation WebUI](https://github.com/oobabooga/text-generation-webui) due to its extensibility and customizability for developers.
-
-- Cloning [Text Generation WebUI](https://github.com/oobabooga/text-generation-webui) repository
-- Key Features:
-  - Model management, loading, and execution
-  - Text-to-text tasks with loaded models
-    - Chat, Instructions, and Notebook interfaces
-    - Chat templates
-  - Model parameter configuration for optimal performance and hardware compatibility
-    - Load models with CPU, GPU, VRAM, and RAM limits, quantization, and other helpful configurations
-  - Extension management
-    - Text-to-speech and speech-to-text integrations
-    - Image generation and computer vision
-    - Translations
-    - Multimodal pipelines and job handling
-    - RAG and custom datasets
-    - AI Character downloading and management
-    - Vector database utilization
-    - Custom extension development
-  - Local API execution
-  - Model fine-tuning
-- Installation Preparation
-  - Follow the [Official Instructions](https://github.com/oobabooga/text-generation-webui?tab=readme-ov-file#how-to-install) for most cases
-  - Depending on your Operating System and Hardware, you may need to install additional dependencies and configure your environment
-  - Note: Not all CPUs and GPUs are compatible with all models and configurations
-    - NVIDIA on Linux and Windows currently has the best compatibility (as of March 2024)
-    - AMD GPUs on Linux and Windows may work with minor configurations or adjustments
-    - Apple and Intel chips may require significant workarounds or may not be compatible
-- Installation Steps
-  1. Clone the repository
-  2. Run the appropriate installation script:
-     - `start_linux.sh` for Linux
-     - `start_windows.bat` for Windows
-     - `start_macos.sh` for MacOS
-     - `start_wsl.bat` for Windows Subsystem for Linux
-  3. Wait for dependency download and installation to complete
-  4. Select your GPU manufacturer and model when prompted
-  5. Confirm selection and wait for the entire installation process to finish
-  6. Open your browser and navigate to <http://localhost:7860> to test the application
-- Alternatives
-  - Using a [Docker container](https://github.com/oobabooga/text-generation-webui/wiki/09-%E2%80%90-Docker)
-  - Using a [Google Colab notebook](https://github.com/oobabooga/text-generation-webui?tab=readme-ov-file#google-colab-notebook)
-
 ## Downloading Models
 
-Text Generation WebUI allows for downloading and managing models from various sources.
+The default models packed with your model loaders are a good starting point for experimentation. But if you want to experiment it further, you can download open-source models from the web, from places like the [Hugging Face Model Hub](https://huggingface.co/models) and others.
 
-- [Model Download](https://github.com/oobabooga/text-generation-webui?tab=readme-ov-file#downloading-models) Methods:
-  1. Using the `Model` interface:
-     - Open the WebUI and navigate to the `Model` tab
-     - Click the `Download` button
-     - Select the desired model
-     - Wait for the download to complete
-     - The model will be available in the `Models` tab
-  2. Using the command line:
-     - Run `python download-model.py <your-model-name>`
-     - Replace `<your-model-name>` with the desired model name
-       - Example: `python download-model.py "TheBloke/Llama-2-7B-Chat-GGUF"`
 - Notable accounts for model exploration and download:
   - [Tom Jobbins](https://huggingface.co/TheBloke)
   - [WizardLM](https://huggingface.co/WizardLM)
@@ -523,16 +442,25 @@ Text Generation WebUI allows for downloading and managing models from various so
   - [ByteDance](https://huggingface.co/ByteDance)
   - [Salesforce](https://huggingface.co/salesforce)
 - Model sizes indicating data usage and processing:
-  - 7B: Uses 7 billion parameters
-  - 13B: Uses 13 billion parameters
-  - 30B: Uses 30 billion parameters
-  - 70B: Uses 70 billion parameters
+  - 1B: Uses 1 billion parameters, suitable for low-resource devices, can't handle complex tasks
+  - 7B: Uses 7 billion parameters, suitable for mid-resource devices, can handle low complexity tasks
+  - 13B: Uses 13 billion parameters, suitable for mid-resource devices, can handle medium complexity tasks
+  - 30B: Uses 30 billion parameters, suitable for high-resource devices, can handle high complexity tasks
+  - 70B: Uses 70 billion parameters, suitable for datacenter-grade devices, can handle very high complexity tasks
     - Examples in model names:
       - `Dr_Samantha-7B-GGUF`
       - `CodeLlama-70B-Python-GPTQ`
 - Model types and compatibility considerations:
   - Some models are modified with quantization, pruning, or other techniques for hardware compatibility
   - Models marked with `GGUF`, `GPTQ`, `GGML`, `AWQ`, and similar tags may require specific configurations or tweaking for proper functionality
+- Model fine-tuning:
+  - Some models are fine-tuned for specific tasks or domains
+  - Examples:
+    - `Llama-3.1-8B-Instruct-GGUF`
+- Multi-modal models:
+  - Some models are designed to handle both text and image inputs
+  - Examples:
+    - `Llama-3.2-90B` which is derived from `Llama-3.1-70B` with additional `20B` parameters for handling images
 
 ## Exercise
 
@@ -540,3 +468,72 @@ Text Generation WebUI allows for downloading and managing models from various so
 - Navigate to the [Model Hub](https://huggingface.co/models)
 - Find a text generation model to download and experiment with
 - Try to run the model locally using Hugging Face Transformers or Text Generation WebUI (or any similar tool), at your preference
+
+## Project Building Guidelines
+
+- Major problems:
+  - Bad coordination
+    - Your biggest enemy
+  - Bad idea
+    - Hidden threat that can take you by surprise
+  - Bad (technical) execution
+    - A relatively smaller problem
+    - What most people focus on
+
+### Solving Coordination Problems
+
+1. Team formation
+2. Planning
+3. Communication
+
+### Solving Ideation Problems
+
+1. Technical ideation vs Business ideation
+2. Prototyping and the importance of a lean MVP
+3. Listening to feedback carefully
+
+### Solving Execution Problems
+
+1. Architecture and documentation
+2. Execution planning and monitoring
+3. Presentation and delivery
+
+## Project Building Exercise
+
+- Form groups of 2-5 people
+- Compose a project idea together
+- Create a GitHub repository for the project
+- Create a README.md file for the project
+  - Write down a very short description of the project
+- Create a plan for the project
+  - Write down the steps to complete the project in a WIP (Work In Progress) Pull Request
+- Implement the project with your team
+- Try to come up with a working demo of your project within the week, following the exercises and appending your idea as needed
+- Submit your project in the [Projects Discussion Category](https://github.com/Wagademy/AI2Web3/discussions/categories/projects) in this repository to be eligible for the demo day at the end of the bootcamp
+  - Template for the initial post:
+
+  ```text
+  # <Project Name>
+
+  <Your short description here>
+
+  ## Team
+
+  <List the team members here>
+
+  ## Description
+
+  <Project longer description here>
+
+  ## Roadmap
+
+  <List the current planning of the roadmap here>
+
+  ## Demo
+
+  <Relevant links to the project here, like repository, links, demo video, etc>
+  ```
+
+- You can edit your project as much as you want during the bootcamp
+  - You may create several projects with different ideas to help brainstorming with your team or even to find other teammates
+  - If you pivot from your initial idea after building some working code, you can create a new project and add it to the discussion, and in the future you or someone else could revisit your older idea and build from there

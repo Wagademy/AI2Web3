@@ -42,7 +42,7 @@ Our bootcamp is structured as follows:
 - Open source and open access AI models
 - Hugging Face models hub
 - Using model loaders
-- Using Text Generation WebUI
+- Project building guidelines
 
 ### Day 2: Frontend Development and AI Integration
 
@@ -73,7 +73,19 @@ Our bootcamp is structured as follows:
 - Open source and open access image generation models
 - Using Stable Diffusion WebUI
 
-### Day 4: Decentralized AI Agents
+### Day 4: Introduction to Decentralized AI
+
+- Decentralized infrastructure
+- Introduction to Web3 concepts
+- Smart contracts
+- Introduction to Tokens
+- Building dApps
+- Decentralized AI applications
+- AI Oracles
+- Introducing opML
+- Initial Model Offerings
+
+### Day 5: Decentralized AI Agents
 
 - Review of Multi-Modal AI applications
 - Expanding GPT capabilities
@@ -82,13 +94,7 @@ Our bootcamp is structured as follows:
 - Function calling
 - AI Tools
 - Hosting agents
-- Decentralized infrastructure
-- Introduction to Web3 concepts for Tokens
 - Monetizing AI Agents with Tokens
-
-### Day 5: Building AI Projects
-
-- Review of Decentralized AI Agents
 - Deploying projects to decentralized infrastructure
 - Project building guidelines
 - Group exercise with mentoring
