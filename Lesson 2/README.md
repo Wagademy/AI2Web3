@@ -796,10 +796,7 @@ These tools can significantly assist developers in creating frontend code for we
 
 - Form a group of 2-5 people around you
 - Create a Github repository for your group
-- Upload the code from the previous exercise to the repository
-- Work together to modify the code to implement new features
-  - Implement a friendship meter that increases at each new message sent to the AI
-  - Display the friendship meter in the UI
-    - Bonus: Make the AI respond differently based on the friendship meter
+- Create a landing page for your idea
 - Commit the changes to the repository
 - Deploy the application to Vercel
+- Update your project submission with the link to your Vercel deployment
