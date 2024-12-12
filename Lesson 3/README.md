@@ -228,11 +228,9 @@ Additionally, we'll set up the Stable Diffusion WebUI application to easily load
       return (
         <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
           {messages.map((m) => (
-            <>
-              <div key={m.id} className="whitespace-pre-wrap">
-                {m.role === "user" ? "User: " : "AI: "}
-                {m.content}
-              </div>
+            <div key={m.id} className="whitespace-pre-wrap">
+              {m.role === "user" ? "User: " : "AI: "}
+              {m.content}
               <div>
                 {m?.experimental_attachments
                   ?.filter((attachment) =>
@@ -247,7 +245,7 @@ Additionally, we'll set up the Stable Diffusion WebUI application to easily load
                     />
                   ))}
               </div>
-            </>
+            </div>
           ))}
     
           <form
@@ -284,8 +282,7 @@ Additionally, we'll set up the Stable Diffusion WebUI application to easily load
           </form>
         </div>
       );
-    }
-
+        }
     ```
 
 12. Run the project
