@@ -74,6 +74,68 @@ Smart contracts are self-executing contracts with the terms of the agreement dir
 - Benefits and limitations of smart contracts
 - Popular smart contract languages (e.g., Solidity, Vyper)
 
+### Deploying your first smart contract
+
+- Create a Fungible Token with [OpenZeppelin Wizard](https://wizard.openzeppelin.com/)
+  - Select the `Premint` checkbox and set the value higher than 0
+- Open the contract in [Remix IDE](https://remix.ethereum.org/)
+- Deploy the contract to the `sepolia` network using your `injected provider` as environment
+- Call the `transfer()` function to transfer tokens to another address
+
+## Getting started with Vara Network
+
+- Building with [Vara](https://wiki.vara.network/docs/build)
+- Vara [Fungible Token Standard](https://wiki.vara.network/docs/examples/Standards/vft)
+- [Benefits](https://wiki.vara.network/docs/about/features) of using Vara
+  - Automation via Delayed Messaging
+  - Gasless Transactions
+  - Signless Transactions
+  - Built-In Actors
+
+### Creating a Wallet for Vara Network
+
+1. Download the [Polkadot extension](https://polkadot.js.org/extension/) for your browser
+2. Once downloaded, click + button to create a new account
+3. Make sure you save your 12-word mnemonic seed securely
+4. Select the network that will be used for this account - choose "Allow to use on any chain". Provide any name to this account and password and click "Add the account with the generated seed" to complete account registration
+
+### Connecting to the Gear Idea App
+
+1. Go to the [Gear IDEA app](https://idea.gear-tech.io/)
+2. Click on "Connect Wallet" button on the top right corner
+3. Click "Yes, allow this application access"
+4. Switch your network to "Vara Testnet" in the bottom left corner
+5. Click on the "Transferable balance" dropdown and then "Get Test Balance"
+6. Complete the captcha and wait for the confirmation message
+
+### Deploying a token to Vara Network
+
+1. Make sure that you have `cargo` available by installing [rust](https://doc.rust-lang.org/cargo/getting-started/installation.html) in your system
+2. A Wasm compiler is necessary for compiling a Rust program to Wasm, add it to the toolchain by running `rustup target add wasm32-unknown-unknown`
+3. Install the [Sails CLI](https://wiki.vara.network/docs/build/sails) by running `cargo install sails-cli`
+4. Clone the [Vara Standards Repository](https://github.com/gear-foundation/standards)
+5. Navigate to the `extended-vft` folder
+6. Run `cargo build --release` to build the project
+7. Navigate to the `target/wasm32-unknown-unknown/release` folder
+8. Go for your Idea app
+9. Click in the Upload program button to open a popup window for uploading your new program
+10. In the popup, click the Select file button and navigate to the .opt.wasm file we have pointed to above
+11. After uploading the .opt.wasm file, you need to upload the IDL file in the bottom of the popup window
+12. Specify the program name, click the Calculate Gas button to set the gas limit automatically
+13. Fill the constructor parameters and click the "+ Submit" button to deploy the program
+14. Sign the gear.uploadProgram transaction to Vara
+    - It is recommended to set the checkbox Remember my password for the next 15 minutes for your convenience
+15. Once your program is uploaded, go to the Programs section, find your program, and select it
+16. Go for the "Read State" page to get the values stored in the program
+17. Read the `Minters` query to get the address of the minter
+18. Go for the "Send Message" page to interact with the program
+19. Select the `mint` function from the dropdown menu
+20. Fill the address and value parameters
+    - Remember to add the zeros for the decimals of the token
+21. Calculate the gas limit
+22. Click on "Send Message" button and approve the transaction
+23. After the transaction is confirmed, you can view the updated state of the program by querying the `balanceOf` function or the `totalSupply` function
+
 ## Decentralized AI
 
 The capabilities of Generative AI models can be extended to decentralized applications by integrating them with smart contracts. This allows for creating many powerful combinations, such as financially autonomous agents, AI-powered marketplaces, dataset sharing for distributed training, peer-to-peer GPU computing markets, and more.
