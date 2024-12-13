@@ -170,7 +170,7 @@ By the end of this this lesson we'll cover all you need to know about building a
 ## Using Functions to Enhance "Reasoning"
 
 - How to [teach reasoning](https://openai.com/index/learning-to-reason-with-llms/) on top of non-reasoning text-generation processes
-  - OpenAI [GPT-4o1](https://openai.com/index/introducing-openai-o1-preview/) example
+  - OpenAI [GPT-o1](https://openai.com/index/introducing-openai-o1-preview/) example
 - Automating the Chain of Thought prompt generation with agents
   - Amazon Web Services [Auto-CoT](https://arxiv.org/pdf/2210.03493) example
 - Variations for Chain of Thought
