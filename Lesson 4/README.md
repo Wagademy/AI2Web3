@@ -184,7 +184,7 @@ A troll is sitting in front of the contract guarding the vault.
   - If the riddle is solved correctly, the boolean is set to `true` and the deposit can be withdrawn
   - For solving the riddle, the string passed should be considered a valid solution by the AI model
 - Example riddle: `Thirty white horses on a red hill, First they champ, Then they stamp, Then they stand still.`
-- Using a [starting template](https://hardhat.org/hardhat-runner/docs/getting-started) for the `Lock.ts` contract
+- Using a [starting template](https://hardhat.org/hardhat-runner/docs/getting-started) for the `Lock.sol` contract
 - Implementing the AI Oracle interface
 
   ```solidity
