@@ -248,6 +248,14 @@ Let's create a simple AI Agent that can interact with a smart contract to perfor
 - Databases
 - Web3 integration
 
+### AI Agents example
+
+- Build and deploy autonomous apps & AI agents with [Fleek](https://fleek.xyz/)
+- [Fleek tools for CDP](https://github.com/fleek-tools/AI-Agent-CDP)
+  - [CDP Agent Demo on Fleek](https://github.com/g4titanx/cdp-agent-demo)
+- [Fleek Machines](https://fleek.xyz/blog/announcements/fleek-machines-fleek-functions/)
+  - [Early Access](https://dub.sh/machinesearlyaccess)
+
 ## Next Steps
 
 - Join the community
