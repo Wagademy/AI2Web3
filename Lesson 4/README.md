@@ -258,6 +258,10 @@ A troll is sitting in front of the contract guarding the vault.
 - Implementing the oracle callback function
 
   ```solidity
+    function estimateFee(uint256 modelId) public view returns (uint256) {
+        return aiOracle.estimateFee(modelId, callbackGasLimit[modelId]);
+    }
+
   // the callback function, only the AI Oracle can call this function
     function aiOracleCallback(
         uint256 requestId,
@@ -286,8 +290,99 @@ A troll is sitting in front of the contract guarding the vault.
   }   
   ```
 
+- Full code:
+
+```solidity
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.28;
+
+import "./interfaces/IAIOracle.sol";
+import "./AIOracleCallbackReceiver.sol";
+
+contract Lock is AIOracleCallbackReceiver {
+    event Withdrawal(uint amount, uint when);
+    
+    // modelId => callback gasLimit
+    mapping(uint256 => uint64) public callbackGasLimit;
+
+    struct AIOracleRequest {
+        address sender;
+        uint256 modelId;
+        bytes input;
+        bytes output;
+    }
+
+    // requestId => AIOracleRequest
+    mapping(uint256 => AIOracleRequest) public requests;
+
+    bool public unlockFunds;
+    string public riddle;
+    address public winner;
+    string public constant PROMPT_CONFIG =
+        "I am going to give you a riddle marked as RIDDLE and a proposed solution marked as SOLUTION. If the solution provided is acceptable for the riddle, answer with the word CORRECT, and nothing else. If the solution provided is not acceptable, answer WRONG, and nothing else.";
+    uint256 public constant MODEL_ID = 11;
+
+    constructor(IAIOracle _aiOracle, string memory _riddle)
+        payable
+        AIOracleCallbackReceiver(_aiOracle)
+    {
+        callbackGasLimit[MODEL_ID] = 5_000_000;
+        riddle = _riddle;
+    }
+
+    function solveRiddle(string calldata solution) external payable {
+        require(winner == address(0), "Winner is already set!");
+        bytes memory fullPrompt = abi.encodePacked(
+            PROMPT_CONFIG,
+            " RIDDLE: ",
+            riddle,
+            " SOLUTION: ",
+            solution
+        );
+        uint256 requestId = aiOracle.requestCallback{value: msg.value}(
+            MODEL_ID,
+            fullPrompt,
+            address(this),
+            callbackGasLimit[MODEL_ID],
+            ""
+        );
+        AIOracleRequest storage request = requests[requestId];
+        request.input = fullPrompt;
+        request.sender = msg.sender;
+        request.modelId = MODEL_ID;
+    }
+
+    function estimateFee(uint256 modelId) public view returns (uint256) {
+        return aiOracle.estimateFee(modelId, callbackGasLimit[modelId]);
+    }
+
+    // the callback function, only the AI Oracle can call this function
+    function aiOracleCallback(
+        uint256 requestId,
+        bytes calldata output,
+        bytes calldata callbackData
+    ) external override onlyAIOracleCallback {
+        // since we do not set the callbackData in this example, the callbackData should be empty
+        require(winner == address(0), "Winner is already set!");
+        AIOracleRequest storage request = requests[requestId];
+        require(request.sender != address(0), "request not exists");
+        request.output = output;
+        if (keccak256(output) == keccak256(bytes("CORRECT"))) {
+            winner = request.sender;
+            unlockFunds = true;
+        }
+    }
+
+    function withdraw() public {
+        require(unlockFunds, "You can't withdraw yet");
+        emit Withdrawal(address(this).balance, block.timestamp);
+        payable(winner).transfer(address(this).balance);
+    }
+}
+```
+
 - Deploy the contract to the `sepolia` network using your `injected provider` as environment
-- Call the `solveRiddle()` function passing the correct solution
+- Call the `solveRiddle()` function passing the correct solution and the correct value of ETH
 - When the transaction is confirmed and the callback is executed, call the `withdraw()` function to withdraw the funds
 
 ### Initial Model Offerings
