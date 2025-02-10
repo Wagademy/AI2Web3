@@ -4,7 +4,7 @@ Introduction to decentralized AI agents development.
 
 ## Introduction
 
-Welcome to the **AI2Web3 Bootcamp**. This repository houses all the necessary instructions and resources for an immersive 5-fays program designed to equip students with cutting-edge techniques for developing applications using **Generative Artificial Intelligence** for **Decentralized AI Agents**.
+Welcome to the **AI2Web3 Bootcamp**. This repository houses all the necessary instructions and resources for an immersive 5-days program designed to equip students with cutting-edge techniques for developing applications using **Generative Artificial Intelligence** for **Decentralized AI Agents**.
 
 Our bootcamp emphasizes a **hands-on** and **project-based** approach, allowing students to learn concepts and immediately apply them to real-world challenges. While we don't dive into the depths of AI or Web3 research itself, our focus is on the **practical applications** of these technologies for building **Decentralized AI Agents**.
 
